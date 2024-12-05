@@ -1,0 +1,32 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}"/>
+</head>
+<body>
+    <div class="container">
+        
+     <h5>Text to number conversion</h5>
+    <form id="convertionForm">
+        
+    Text:<input type="text" id="textInput" placeholder="enter text"><br><br>
+    
+    <button type="submit">convert</button>
+    </form>
+    <div id="result"></div>
+    </div>
+    <script src="{% static 'hello.js' %}"></script>
+</body>
+</html>
+
+
+
+
+
+
