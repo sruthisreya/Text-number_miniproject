@@ -1,0 +1,63 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}"/>
+</head>
+<body>
+    <div class="container">
+        
+     <!-- <h5>Login page</h5> -->
+      <h3 >Register Form</h3>
+    <form id="form" method="post">
+        {% csrf_token %}
+        <p>
+        
+            <label for="username">Username:</label>
+        
+            {{ form.username }}
+            {% if form.username.errors %}
+                {% for error in form.username.errors %}
+                    {{error}}
+                {% endfor %}
+            {% endif %}
+        </p>
+        <p>
+            <label for="email">Email:</label>
+            {{ form.email }}
+            {% if form.email.errors %}
+                {% for error in form.email.errors %}
+                    {{error}}
+                {% endfor %}
+            {% endif %}
+        </p>
+        <p>
+            <label for="password">Password:</label>
+        
+            {{ form.password }}
+            {% if form.password.errors %}
+                {% for error in form.password.errors %}
+                    {{error}}
+                {% endfor %}
+            {% endif %}
+        </p>
+        <p>
+            <label for="Cpassword">Confirm password:</label>
+            {{ form.confirm_password }}
+            {% if form.confirm_password.errors %}
+                {% for error in form.confirm_password.errors %}
+                    {{error}}
+                {% endfor %}
+            {% endif %}
+        </p>
+            <button type="submit">Register</button><br>
+    </form>
+    <p>Already have an account? <a href="{% url 'login' %}">Login now</a></p>
+    <div id="result"></div>
+    </div> 
+</body>
+</html>

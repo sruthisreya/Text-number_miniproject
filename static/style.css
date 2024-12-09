@@ -1,25 +1,14 @@
 body {
     font-family: Arial, sans-serif;
-    background-color:cadetblue;
-    /* margin: 0; */
-    /* padding: 0; */
+    background-color:black;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
 }
-.container {
-    background:darkkhaki;
-    padding: 50px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    width: 150%;
-    height: 20%;
-    max-width: 390px;
-}
+
 button {
-    background-color: #4CAF50; 
+    background-color:chocolate; 
     color: white; 
     border: none; 
     padding: 10px 24px; 
@@ -30,21 +19,33 @@ button {
     transition: all 0.3s ease; 
 }
 
-input[type="text"] {
-    width: 70%; 
+input {
+    width: 90%;
     padding: 10px; 
     margin: 10px 0; 
     border: 1px solid #ccc; 
     border-radius: 5px; 
     font-size: 16px; 
     font-family: Arial, sans-serif;
-    box-sizing: border-box; 
+    box-sizing: border-box;
     transition: border-color 0.3s ease; /
 }
 h5 {
-    font-size: 14px; 
-    color:black; 
-    background-color:burlywood;
+    font-size: 14px;
+    color:black;
+    background-color:aquamarine;
+}
+h3{
+    color: brown;
+    font-family: 'Times New Roman', Times, serif;
 }
 
-
+.container {
+    background:silver;
+    padding: 50px;
+    border-radius: 8px;
+    /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
+    text-align: center;
+    height: 70%;
+    max-width: 290px;
+}

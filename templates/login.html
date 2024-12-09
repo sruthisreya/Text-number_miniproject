@@ -1,0 +1,52 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}"/>
+</head>
+<body>
+    <div class="container">
+        
+     <!-- <h5>Login page</h5> -->
+        <h3 >Login Form</h3>
+        {% if messages %}
+            {% for message in messages %}
+                {{message}}
+            {% endfor %}
+        {% endif %}  
+        <form method="post">
+            {% csrf_token %}
+            
+        <label for="username">Username:</label>
+        {{ form.username }}
+        {% if form.username.errors %}
+
+                {% for error in form.username.errors %}
+                    {{ error }}
+                {% endfor %}
+                                               
+        {% endif %}
+        <label for="password">Password:</label><br>
+        {{ form.password }}
+        {% if form.password.errors %}
+
+                {% for error in form.password.errors %}
+                    {{ error }}
+                {% endfor %}
+        
+        {% endif %}
+
+        <br>
+        <button type="submit">Login</button><br><br>
+        not a member? <a href="register">Sign Up</a><br>
+        </form>
+        <div id="result"></div>
+    </div>
+    
+</body>
+</html>

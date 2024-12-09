@@ -18,3 +18,12 @@ class Numconversion(models.Model):
 
     def __str__(self):
         return f"{self.textitem} → {self.numberres}"
+    
+
+class Loguser(models.Model):
+    username=models.CharField(max_length=200)
+    email=models.EmailField(unique=True)
+    password=models.CharField(max_length=200)
+
+    def __str__(self):
+        return self.username
