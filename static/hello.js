@@ -16,6 +16,7 @@ document.getElementById("convertionForm").addEventListener("submit", function (e
             "Content-Type": "application/json",
             "X-CSRFToken": getCookie("csrftoken"),
         },
+        
         body: JSON.stringify({ text: input }),
     })
         .then(response => response.json())

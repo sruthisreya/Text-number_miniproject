@@ -9,6 +9,7 @@ urlpatterns = [
     path('converting/',views.converting,name="converting"),
     path('',views.login,name='login'),
     path('register/',views.register,name="register"),
+    path('logout/',views.logout,name='logout')
 
     
     

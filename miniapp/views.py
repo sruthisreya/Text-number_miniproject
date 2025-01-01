@@ -3,8 +3,10 @@ import json
 from django.http import JsonResponse
 from django.shortcuts import render,redirect
 from word2number import w2n
+from django.contrib.auth import authenticate
 
 from .forms import RegistrationForm,LoginForm
+
 from django.contrib import messages
 
 from .models import Loguser, Numconversion
@@ -23,6 +25,7 @@ def login(request):
             try:
                 obj=Loguser.objects.get(username=username)
                 if obj.password==password:
+                    request.session['user_id']=obj.id
                     messages.success(request,' ')
                     return redirect('hello')
                 else:
@@ -53,6 +56,9 @@ def register(request):
 
 
 def converting(request):
+    if 'user_id' not in request.session:
+        return JsonResponse({'error':'please login'})
+
     if request.method == "POST":
         data = json.loads(request.body)
         text = data.get('text','').strip()
@@ -67,7 +73,11 @@ def converting(request):
     return JsonResponse({"error":"invalid method"},status=400)
 
 
-
+def logout(request):
+    if 'user_id'in request.session:
+        del request.session['user_id']
+    messages.success(request,'logged out')
+    return redirect('login')
         
         
  
